@@ -7,7 +7,7 @@ public class BankAccount {
         return accountBalance;
     }
 
-    public void setAccountBalance(int accountBalance) {
+    private void setAccountBalance(int accountBalance) {
         this.accountBalance = accountBalance;
     }
 
