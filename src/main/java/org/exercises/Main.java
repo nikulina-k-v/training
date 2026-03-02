@@ -5,37 +5,59 @@ import org.exercises.task2.Rectangle;
 import org.exercises.task3.BankAccount;
 import org.exercises.task3.SavingsAccount;
 
+import org.exercises.task4.Calculator;
+import org.exercises.task5.Aspirant;
+import org.exercises.task5.Student;
+import org.exercises.task6.Driver;
+import org.exercises.task6.Engine;
+import org.exercises.task6.Lorry;
+import org.exercises.task6.SportCar;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Test One");
-        mainOne();
+        tastOneTest();
 
         System.out.println("Test Two");
-        mainTwo();
+        taskTwoTest();
 
         System.out.println("Test Three");
-        mainThree();
-    }
-    static void mainOne() {
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.deposit(1000);
-        bankAccount.actualBalance();
-        bankAccount.withdraw(900);
-        bankAccount.actualBalance();
+        taskThreeTest();
 
-        SavingsAccount savingsAccount = new SavingsAccount();
-        savingsAccount.deposit(-100);
-        savingsAccount.actualBalance();
-        savingsAccount.withdraw(900);
-        savingsAccount.actualBalance();
+        System.out.println("Test Four");
+        taskFourTest();
+
+        System.out.println("Test Five");
+        taskFiveTest();
+
+        System.out.println("Test Six");
+        taskSixTest();
     }
-    static void mainTwo() {
+
+    static void tastOneTest() {
+        Person personOne = new Person();
+        personOne.name = "Alice";
+        personOne.age = 25;
+
+        Person personTwo = new Person();
+        personTwo.name = "Blair";
+        personTwo.age = 30;
+
+        System.out.println("Первого человека зовут: " +
+                personOne.name + ". Возраст составляет: " +
+                personOne.age + " лет!");
+
+        System.out.println("Второго человека зовут: " +
+                personTwo.name + ". Возраст составляет: " +
+                personTwo.age + " лет!");
+    }
+
+    static void taskTwoTest() {
         Rectangle rectangleOne = new Rectangle();
         rectangleOne.setWidth(2.5);
         rectangleOne.setHeight(3);
 
         Person p = new Person();
-
 
         Rectangle rectangleTwo = new Rectangle();
         rectangleTwo.setWidth(2.8);
@@ -45,18 +67,102 @@ public class Main {
         System.out.println("Площадь второго прямоугольника: " + rectangleTwo.rectangleArea());
         System.out.println("Перимерт первого прямоугольника: " + rectangleOne.rectanglePerimeter());
         System.out.println("Периметр второго прямоугольника: " + rectangleTwo.rectanglePerimeter());
-
     }
-    static void mainThree() {
-        Person personOne = new Person();
-        personOne.name = "Alice";
-        personOne.age = 25;
 
-        Person personTwo = new Person();
-        personTwo.name = "Blair";
-        personTwo.age = 30;
+    static void taskThreeTest() {
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.deposit(1000);
+        bankAccount.actualBalance();
+        bankAccount.withdraw(900);
+        bankAccount.actualBalance();
 
-        System.out.println("Первого человека зовут: " + personOne.name + ". Возраст составляет: " + personOne.age + " лет!");
-        System.out.println("Второго человека зовут: " + personTwo.name + ". Возраст составляет: " + personTwo.age + " лет!");
+        SavingsAccount savingsAccount = new SavingsAccount();
+        savingsAccount.deposit(1000);
+        savingsAccount.actualBalance();
+        savingsAccount.withdraw(900);
+        savingsAccount.actualBalance();
+    }
+
+    static void taskFourTest() {
+        Calculator calculator = new Calculator();
+
+        System.out.println("Произведение двух целых чисел: " +
+                calculator.multiply(2, 3));
+        System.out.println("Произведение числа с плавающей точкой и целого числа: " +
+                calculator.multiply(2.5, 3));
+        System.out.println("Произведение двух чисел с плавающей точкой: " +
+                calculator.multiply(2.5, 3.5));
+    }
+
+    static void taskFiveTest() {
+        Student studentOne = new Student();
+        studentOne.setFirstName("Кристина");
+        studentOne.setLastName("Никулина");
+        studentOne.setAverageMark(4.9);
+
+        Student studentTwo = new Student();
+        studentTwo.setFirstName("Екатерина");
+        studentTwo.setLastName("Фирсова");
+        studentTwo.setAverageMark(-3.5);
+
+        Aspirant aspirantOne = new Aspirant();
+        aspirantOne.setFirstName("Татьяна");
+        aspirantOne.setLastName("Перова");
+        aspirantOne.setAverageMark(5.0);
+
+        Aspirant aspirantTwo = new Aspirant();
+        aspirantTwo.setFirstName("Кэтрин");
+        aspirantTwo.setLastName("Асманова");
+        aspirantTwo.setAverageMark(5.1);
+
+        studentOne.printInfoAboutScolarship("Студент");
+        studentTwo.printInfoAboutScolarship("Студент");
+        aspirantOne.printInfoAboutScolarship("Аспирант");
+        aspirantTwo.printInfoAboutScolarship("Аспирант");
+    }
+
+    static void taskSixTest() {
+        Driver driverOne = new Driver();
+        driverOne.setFullName("Никулин Андрей Алексеевич");
+        driverOne.setExperience(10);
+
+        Driver driverTwo = new Driver();
+        driverTwo.setFullName("Перов Петр Николаевич");
+        driverTwo.setExperience(18);
+
+        Engine engineOne = new Engine();
+        engineOne.setPower(106);
+        engineOne.setCompany("ЗМЗ");
+
+        Engine engineTwo = new Engine();
+        engineTwo.setPower(461);
+        engineTwo.setCompany("Rolls-Royce Motor Cars");
+
+        Lorry lorry = new Lorry();
+        lorry.setDriver(driverOne);
+        lorry.setCarrying(1500);
+        lorry.setCarClass("ГАЗель");
+        lorry.setEngine(engineOne);
+        lorry.setMarka("ГАЗ");
+        lorry.setWeight(2000);
+
+        SportCar sportCar = new SportCar();
+        sportCar.setDriver(driverTwo);
+        sportCar.setSpeed(200.0);
+        sportCar.setCarClass("Cabriolet");
+        sportCar.setEngine(engineTwo);
+        sportCar.setMarka("Cabri");
+        sportCar.setWeight(1200);
+
+        System.out.println(lorry);
+        sportCar.start();
+        sportCar.turnLeft();
+        sportCar.stop();
+
+        System.out.println();
+        System.out.println(sportCar);
+        lorry.start();
+        lorry.turnRight();
+        lorry.stop();
     }
 }
