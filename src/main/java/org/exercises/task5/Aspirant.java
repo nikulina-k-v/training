@@ -16,8 +16,10 @@ public class Aspirant  extends Student{
     public Integer getScholarship() {
         if (getAverageMark() == 5) {
             return 2500;
-        } else if (getAverageMark() < 5) {
+        } else if (getAverageMark() < 5 && getAverageMark() > 0) {
             return 2200;
+        } else if (getAverageMark() < 0 && getAverageMark() > 5) {
+            System.out.println("Некорректная средняя оценка!");
         }
         return -1;
     }

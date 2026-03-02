@@ -41,8 +41,10 @@ public class Student {
     public Integer getScholarship() {
         if (getAverageMark() == 5) {
             return 2000;
-        } else if (getAverageMark() < 5) {
+        } else if (getAverageMark() < 5 && getAverageMark() > 0) {
             return 1900;
+        } else if (getAverageMark() < 0 && getAverageMark() > 5) {
+            System.out.println("Некорректная средняя оценка!");
         }
         return -1;
     }

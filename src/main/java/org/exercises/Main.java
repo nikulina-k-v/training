@@ -16,10 +16,14 @@ import org.exercises.task6.SportCar;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Test One");
-        mainOne();
+        tastOneTest();
 
         System.out.println("Test Two");
-        mainTwo();
+        taskTwoTest();
+
+        System.out.println("Test Three");
+        taskThreeTest();
+
         System.out.println("Test Four");
         taskFourTest();
 
@@ -30,63 +34,30 @@ public class Main {
         taskSixTest();
     }
 
-    static void taskFourTest() {
+    static void tastOneTest() {
+        Person personOne = new Person();
+        personOne.name = "Alice";
+        personOne.age = 25;
 
-        Calculator calculator = new Calculator();
+        Person personTwo = new Person();
+        personTwo.name = "Blair";
+        personTwo.age = 30;
 
-        System.out.println("Произведение двух целых чисел: " +
-                calculator.multiply(2, 3));
-        System.out.println("Произведение числа с плавающей точкой и целого числа: " +
-                calculator.multiply(2.5, 3));
-        System.out.println("Произведение двух чисел с плавающей точкой: " +
-                calculator.multiply(2.5, 3.5));
+        System.out.println("Первого человека зовут: " +
+                personOne.name + ". Возраст составляет: " +
+                personOne.age + " лет!");
 
+        System.out.println("Второго человека зовут: " +
+                personTwo.name + ". Возраст составляет: " +
+                personTwo.age + " лет!");
     }
 
-    static void taskFiveTest() {
-        Student studentOne = new Student();
-        studentOne.setFirstName("Кристина");
-        studentOne.setLastName("Никулина");
-        studentOne.setAverageMark(5.0);
-
-        Student studentTwo = new Student();
-        studentTwo.setFirstName("Екатерина");
-        studentTwo.setLastName("Фирсова");
-        studentTwo.setAverageMark(4.3);
-
-        Aspirant aspirantOne = new Aspirant();
-        aspirantOne.setFirstName("Татьяна");
-        aspirantOne.setLastName("Перова");
-        aspirantOne.setAverageMark(5.0);
-
-        Aspirant aspirantTwo = new Aspirant();
-        aspirantTwo.setFirstName("Кэтрин");
-        aspirantTwo.setLastName("Асманова");
-        aspirantTwo.setAverageMark(6.0);
-
-        System.out.println("Test Three");
-        mainThree();
-    }
-    static void mainOne() {
-        BankAccount bankAccount = new BankAccount();
-        bankAccount.deposit(1000);
-        bankAccount.actualBalance();
-        bankAccount.withdraw(900);
-        bankAccount.actualBalance();
-
-        SavingsAccount savingsAccount = new SavingsAccount();
-        savingsAccount.deposit(-100);
-        savingsAccount.actualBalance();
-        savingsAccount.withdraw(900);
-        savingsAccount.actualBalance();
-    }
-    static void mainTwo() {
+    static void taskTwoTest() {
         Rectangle rectangleOne = new Rectangle();
         rectangleOne.setWidth(2.5);
         rectangleOne.setHeight(3);
 
         Person p = new Person();
-
 
         Rectangle rectangleTwo = new Rectangle();
         rectangleTwo.setWidth(2.8);
@@ -96,19 +67,54 @@ public class Main {
         System.out.println("Площадь второго прямоугольника: " + rectangleTwo.rectangleArea());
         System.out.println("Перимерт первого прямоугольника: " + rectangleOne.rectanglePerimeter());
         System.out.println("Периметр второго прямоугольника: " + rectangleTwo.rectanglePerimeter());
-
     }
-    static void mainThree() {
-        Person personOne = new Person();
-        personOne.name = "Alice";
-        personOne.age = 25;
 
-        Person personTwo = new Person();
-        personTwo.name = "Blair";
-        personTwo.age = 30;
+    static void taskThreeTest() {
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.deposit(1000);
+        bankAccount.actualBalance();
+        bankAccount.withdraw(900);
+        bankAccount.actualBalance();
 
-        System.out.println("Первого человека зовут: " + personOne.name + ". Возраст составляет: " + personOne.age + " лет!");
-        System.out.println("Второго человека зовут: " + personTwo.name + ". Возраст составляет: " + personTwo.age + " лет!");
+        SavingsAccount savingsAccount = new SavingsAccount();
+        savingsAccount.deposit(1000);
+        savingsAccount.actualBalance();
+        savingsAccount.withdraw(900);
+        savingsAccount.actualBalance();
+    }
+
+    static void taskFourTest() {
+        Calculator calculator = new Calculator();
+
+        System.out.println("Произведение двух целых чисел: " +
+                calculator.multiply(2, 3));
+        System.out.println("Произведение числа с плавающей точкой и целого числа: " +
+                calculator.multiply(2.5, 3));
+        System.out.println("Произведение двух чисел с плавающей точкой: " +
+                calculator.multiply(2.5, 3.5));
+    }
+
+    static void taskFiveTest() {
+        Student studentOne = new Student();
+        studentOne.setFirstName("Кристина");
+        studentOne.setLastName("Никулина");
+        studentOne.setAverageMark(4.9);
+
+        Student studentTwo = new Student();
+        studentTwo.setFirstName("Екатерина");
+        studentTwo.setLastName("Фирсова");
+        studentTwo.setAverageMark(-3.5);
+
+        Aspirant aspirantOne = new Aspirant();
+        aspirantOne.setFirstName("Татьяна");
+        aspirantOne.setLastName("Перова");
+        aspirantOne.setAverageMark(5.0);
+
+        Aspirant aspirantTwo = new Aspirant();
+        aspirantTwo.setFirstName("Кэтрин");
+        aspirantTwo.setLastName("Асманова");
+        aspirantTwo.setAverageMark(5.1);
+
         studentOne.printInfoAboutScolarship("Студент");
         studentTwo.printInfoAboutScolarship("Студент");
         aspirantOne.printInfoAboutScolarship("Аспирант");

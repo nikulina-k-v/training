@@ -13,13 +13,21 @@ public class BankAccount {
 
     public Integer withdraw(int amount) {
         //позволяет снимать деньги со счета
-        accountBalance = accountBalance - amount;
+        if (amount >= 0 && amount <= accountBalance) {
+            accountBalance = accountBalance - amount;
+        } else if (amount < 0) {
+            System.out.println("Невозможно снять деньги со счета. На счету недостаточно средств!");
+        }
         return accountBalance;
     }
 
     public Integer deposit(int amount) {
         //позволяет положить деньги на счет
-        accountBalance = accountBalance + amount;
+        if (amount >= 0) {
+            accountBalance = accountBalance + amount;
+        } else if (amount < 0) {
+            System.out.println("Невозможно пополнить баланс счета. Недостаточно средств!");
+        }
         return accountBalance;
     }
 
