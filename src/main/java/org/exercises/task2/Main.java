@@ -1,10 +1,16 @@
 package org.exercises.task2;
 
+
+import org.exercises.Person;
+
 public class Main {
     public static void main(String[] args) {
         Rectangle rectangleOne = new Rectangle();
         rectangleOne.setWidth(2.5);
         rectangleOne.setHeight(3);
+
+        Person p = new Person();
+
 
         Rectangle rectangleTwo = new Rectangle();
         rectangleTwo.setWidth(2.8);
