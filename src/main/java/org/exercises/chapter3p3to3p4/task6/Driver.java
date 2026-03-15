@@ -1,4 +1,4 @@
-package org.exercises.task6;
+package org.exercises.chapter3p3to3p4.task6;
 
 public class Driver extends Person{
     private int experience;
@@ -15,6 +15,7 @@ public class Driver extends Person{
     public String toString() {
         return "Driver{" +
                 "ФИО водителя: " + super.getFullName() + ", " +
+                "Возраст водителя: " + super.getAge() + " лет, " +
                 "Стаж вождения: " + experience + " лет" +
                 '}';
     }

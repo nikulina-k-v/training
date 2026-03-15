@@ -1,4 +1,4 @@
-package org.exercises.task6;
+package org.exercises.chapter3p3to3p4.task6;
 
 public class Person {
     private int age;
@@ -12,11 +12,19 @@ public class Person {
         this.fullName = fullName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-//                "Возраст: " + age + " " +
-                "ФИО: " + fullName +
+                "ФИО: " + fullName + " " +
+                "Возраст: " + age +
                 '}';
     }
 }

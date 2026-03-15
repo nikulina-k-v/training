@@ -1,4 +1,4 @@
-package org.exercises.task5;
+package org.exercises.chapter3p3to3p4.task5;
 
 public class Student {
     private String firstName;
@@ -43,21 +43,21 @@ public class Student {
             return 2000;
         } else if (getAverageMark() < 5 && getAverageMark() > 0) {
             return 1900;
-        } else if (getAverageMark() < 0 && getAverageMark() > 5) {
-            System.out.println("Некорректная средняя оценка!");
+        } else {
+            return -1;
         }
-        return -1;
     }
 
-    public void printInfoAboutScolarship(String type) {
+    @Override
+    public String toString() {
         if (getScholarship() != -1) {
-            System.out.println(type + " по имени " +
+            return "Студент по имени " +
                     getFirstName() + " " +
                     getLastName() + " со средней оценкой " +
                     getAverageMark() + " получает стипендию в размере " +
-                    getScholarship() + " рублей!");
+                    getScholarship() + " рублей!";
         } else {
-            System.out.println("Некорректная средняя оценка!");
+            return String.format("Студент %s %s: некорректная средняя оценка!", getFirstName(), getLastName());
         }
     }
 }
