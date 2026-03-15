@@ -1,20 +1,20 @@
-package org.exercises.task6;
+package org.exercises.chapter3p3to3p4.task6;
 
-public class Lorry extends Car{
-    private int carrying;
+public class SportCar extends Car{
+    private double speed;
 
-    public int getCarrying() {
-        return carrying;
+    public double getSpeed() {
+        return speed;
     }
 
-    public void setCarrying(int carrying) {
-        this.carrying = carrying;
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
 
     @Override
     public String toString() {
-        return "Lorry{" +
-                "Грузоподъемность: " + carrying + " кг, " +
+        return "SportCar{" +
+                "Скорость: " + speed + " км/ч, " +
                 "Марка автомобиля: " + super.getMarka() + ", " +
                 "Класс автомобиля: " + super.getCarClass() + ", " +
                 "Водитель: " + super.getDriver() + ", " +

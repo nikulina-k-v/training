@@ -1,4 +1,4 @@
-package org.exercises.task6;
+package org.exercises.chapter3p3to3p4.task6;
 
 public class Person {
     private int age;

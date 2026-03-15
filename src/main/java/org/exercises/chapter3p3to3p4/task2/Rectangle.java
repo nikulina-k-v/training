@@ -1,4 +1,4 @@
-package org.exercises.task2;
+package org.exercises.chapter3p3to3p4.task2;
 
 public class Rectangle {
     private double width;

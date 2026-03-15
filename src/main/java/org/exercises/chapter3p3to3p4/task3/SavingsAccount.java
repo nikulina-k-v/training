@@ -1,4 +1,4 @@
-package org.exercises.task3;
+package org.exercises.chapter3p3to3p4.task3;
 
 public class SavingsAccount extends BankAccount {
     @Override

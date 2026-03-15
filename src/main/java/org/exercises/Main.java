@@ -1,17 +1,17 @@
 package org.exercises;
 
-import org.exercises.task1.Person;
-import org.exercises.task2.Rectangle;
-import org.exercises.task3.BankAccount;
-import org.exercises.task3.SavingsAccount;
+import org.exercises.chapter3p3to3p4.task1.Person;
+import org.exercises.chapter3p3to3p4.task2.Rectangle;
+import org.exercises.chapter3p3to3p4.task3.BankAccount;
+import org.exercises.chapter3p3to3p4.task3.SavingsAccount;
 
-import org.exercises.task4.Calculator;
-import org.exercises.task5.Aspirant;
-import org.exercises.task5.Student;
-import org.exercises.task6.Driver;
-import org.exercises.task6.Engine;
-import org.exercises.task6.Lorry;
-import org.exercises.task6.SportCar;
+import org.exercises.chapter3p3to3p4.task4.Calculator;
+import org.exercises.chapter3p3to3p4.task5.Aspirant;
+import org.exercises.chapter3p3to3p4.task5.Student;
+import org.exercises.chapter3p3to3p4.task6.Driver;
+import org.exercises.chapter3p3to3p4.task6.Engine;
+import org.exercises.chapter3p3to3p4.task6.Lorry;
+import org.exercises.chapter3p3to3p4.task6.SportCar;
 
 public class Main {
     public static void main(String[] args) {

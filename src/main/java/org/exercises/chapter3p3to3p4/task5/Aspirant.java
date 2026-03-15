@@ -1,4 +1,4 @@
-package org.exercises.task5;
+package org.exercises.chapter3p3to3p4.task5;
 
 public class Aspirant  extends Student{
 

@@ -1,4 +1,4 @@
-package org.exercises.task4;
+package org.exercises.chapter3p3to3p4.task4;
 
 public class Calculator {
     public Integer multiply(int a, int b){
