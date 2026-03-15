@@ -12,11 +12,19 @@ public class Person {
         this.fullName = fullName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-//                "Возраст: " + age + " " +
-                "ФИО: " + fullName +
+                "ФИО: " + fullName + " " +
+                "Возраст: " + age +
                 '}';
     }
 }

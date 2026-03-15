@@ -115,19 +115,21 @@ public class Main {
         aspirantTwo.setLastName("Асманова");
         aspirantTwo.setAverageMark(5.1);
 
-        studentOne.printInfoAboutScolarship("Студент");
-        studentTwo.printInfoAboutScolarship("Студент");
-        aspirantOne.printInfoAboutScolarship("Аспирант");
-        aspirantTwo.printInfoAboutScolarship("Аспирант");
+        System.out.println(studentOne);
+        System.out.println(studentTwo);
+        System.out.println(aspirantOne);
+        System.out.println(aspirantTwo);
     }
 
     static void taskSixTest() {
         Driver driverOne = new Driver();
         driverOne.setFullName("Никулин Андрей Алексеевич");
+        driverOne.setAge(30);
         driverOne.setExperience(10);
 
         Driver driverTwo = new Driver();
         driverTwo.setFullName("Перов Петр Николаевич");
+        driverTwo.setAge(25);
         driverTwo.setExperience(18);
 
         Engine engineOne = new Engine();
@@ -159,8 +161,7 @@ public class Main {
         sportCar.turnLeft();
         sportCar.stop();
 
-        System.out.println();
-        System.out.println(sportCar);
+        System.out.println("\n" + sportCar);
         lorry.start();
         lorry.turnRight();
         lorry.stop();

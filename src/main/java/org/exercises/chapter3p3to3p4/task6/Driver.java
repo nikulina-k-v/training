@@ -15,6 +15,7 @@ public class Driver extends Person{
     public String toString() {
         return "Driver{" +
                 "ФИО водителя: " + super.getFullName() + ", " +
+                "Возраст водителя: " + super.getAge() + " лет, " +
                 "Стаж вождения: " + experience + " лет" +
                 '}';
     }
