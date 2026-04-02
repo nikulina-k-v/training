@@ -12,26 +12,57 @@ import org.exercises.chapter3p3to3p4.task6.Driver;
 import org.exercises.chapter3p3to3p4.task6.Engine;
 import org.exercises.chapter3p3to3p4.task6.Lorry;
 import org.exercises.chapter3p3to3p4.task6.SportCar;
+import org.exercises.chapter3p5to3p6.task1.Phone;
+import org.exercises.chapter3p5to3p6.task2.Person1;
+import org.exercises.chapter3p5to3p6.task3.Car;
+import org.exercises.chapter3p5to3p6.task4.Rectangle1;
+import org.exercises.chapter3p5to3p6.task5.Singleton;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Test One");
+        System.out.println(">> Test One");
         tastOneTest();
+        System.out.println("\n******************************************\n");
 
-        System.out.println("Test Two");
+        System.out.println(">> Test Two");
         taskTwoTest();
+        System.out.println("\n******************************************\n");
 
-        System.out.println("Test Three");
+        System.out.println(">> Test Three");
         taskThreeTest();
+        System.out.println("\n******************************************\n");
 
-        System.out.println("Test Four");
+        System.out.println(">> Test Four");
         taskFourTest();
+        System.out.println("\n******************************************\n");
 
-        System.out.println("Test Five");
+        System.out.println(">> Test Five");
         taskFiveTest();
+        System.out.println("\n******************************************\n");
 
-        System.out.println("Test Six");
+        System.out.println(">> Test Six");
         taskSixTest();
+        System.out.println("\n******************************************\n");
+
+        System.out.println(">> Класс Object, Конструкторы. Задача 1");
+        testPhone();
+        System.out.println("\n******************************************\n");
+
+        System.out.println(">> Класс Object, Конструкторы. Задача 2");
+        testPerson();
+        System.out.println("\n******************************************\n");
+
+        System.out.println(">> Класс Object, Конструкторы. Задача 3");
+        testCar();
+        System.out.println("\n******************************************\n");
+
+        System.out.println(">> Класс Object, Конструкторы. Задача 4");
+        testRectangle();
+        System.out.println("\n******************************************\n");
+
+        System.out.println(">> Класс Object, Конструкторы. Задача 5");
+        testSingleton();
+        System.out.println("\n******************************************\n");
     }
 
     static void tastOneTest() {
@@ -165,5 +196,85 @@ public class Main {
         lorry.start();
         lorry.turnRight();
         lorry.stop();
+    }
+
+    public static void testPhone() {
+
+        Phone phoneOne = new Phone(
+                "Siemens A35",
+                "+7 911-326-45-32",
+                0.15
+        );
+
+        Phone phoneTwo = new Phone(
+                "Motorola C105",
+                "+7 951-851-20-45",
+                0.165
+        );
+
+        phoneOne.receiveCall(phoneTwo);
+
+        phoneTwo.receiveCall(phoneTwo);
+
+        System.out.println("Первый " + phoneOne);
+        System.out.println("Второй " + phoneTwo);
+    }
+
+    public static void testPerson() {
+        Person1 personOne = new Person1();
+
+        Person1 personTwo = new Person1(
+                "Никулина Кристина Владимировна",
+                30
+        );
+
+        System.out.println("Person №1:");
+        personOne.move();
+        personOne.talk();
+
+        System.out.println("\nPerson №2:");
+        personTwo.move();
+        personTwo.talk();
+    }
+
+    public static void testCar() {
+        Car carOne = new Car(
+                "Жигули",
+                1998
+        );
+
+        Car carTwo = new Car(
+                null,
+                null
+        );
+
+        System.out.println("Первый " + carOne);
+        System.out.println("Второй " + carTwo);
+    }
+
+    public static void testRectangle() {
+        Rectangle1 rectangleOne = new Rectangle1(
+                10,
+                5
+        );
+
+        Rectangle1 rectangleTwo = new Rectangle1(rectangleOne);
+
+        System.out.println("Первый " + rectangleOne);
+        System.out.println("Второй " + rectangleTwo + " (копия)");
+
+        if (rectangleOne.hashCode() != rectangleTwo.hashCode() || !(rectangleOne.equals(rectangleTwo))) {
+            System.out.println("Склонированные объекты не совпадают!");
+        } else {
+            System.out.println("Объекты корректно склонированы.");
+        }
+    }
+
+    public static void testSingleton() {
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+        if (s1 == s2) {
+            System.out.println("Обе ссылки указывают на один объект в куче");
+        }
     }
 }
