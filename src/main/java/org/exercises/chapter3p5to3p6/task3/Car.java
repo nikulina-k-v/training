@@ -1,11 +1,11 @@
 package org.exercises.chapter3p5to3p6.task3;
 
 public class Car {
-    private String model;
-    private Integer year;
+    private final String model;
+    private final Integer year;
 
     public Car(String model, Integer year) {
-        if(model == null) model = "Лада";
+        if (model == null) model = "Лада";
         if (year == null) year = 2010;
         this.model = model;
         this.year = year;

@@ -5,6 +5,7 @@ import org.exercises.finalproject.enums.Manufacturer;
 import org.exercises.finalproject.enums.Package;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public abstract class Drink {
     private String name;
@@ -13,6 +14,15 @@ public abstract class Drink {
     private Manufacturer manufacturer;
     private Country country;
     private Package aPackage;
+
+    public Drink(String name, BigDecimal price, Float weight, Manufacturer manufacturer, Country country, Package aPackage) {
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
+        this.manufacturer = manufacturer;
+        this.country = country;
+        this.aPackage = aPackage;
+    }
 
     public String getName() {
         return name;
@@ -60,5 +70,35 @@ public abstract class Drink {
 
     public void setaPackage(Package aPackage) {
         this.aPackage = aPackage;
+    }
+
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", weight=" + weight +
+                ", manufacturer=" + manufacturer +
+                ", country=" + country +
+                ", aPackage=" + aPackage +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Drink drink = (Drink) o;
+        return Objects.equals(name, drink.name)
+                && Objects.equals(price, drink.price)
+                && Objects.equals(weight, drink.weight)
+                && manufacturer == drink.manufacturer
+                && country == drink.country
+                && aPackage == drink.aPackage;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, weight, manufacturer, country, aPackage);
     }
 }
