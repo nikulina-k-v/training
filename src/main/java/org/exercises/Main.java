@@ -4,7 +4,6 @@ import org.exercises.chapter3p3to3p4.task1.Person;
 import org.exercises.chapter3p3to3p4.task2.Rectangle;
 import org.exercises.chapter3p3to3p4.task3.BankAccount;
 import org.exercises.chapter3p3to3p4.task3.SavingsAccount;
-
 import org.exercises.chapter3p3to3p4.task4.Calculator;
 import org.exercises.chapter3p3to3p4.task5.Aspirant;
 import org.exercises.chapter3p3to3p4.task5.Student;
@@ -17,6 +16,12 @@ import org.exercises.chapter3p5to3p6.task2.Person1;
 import org.exercises.chapter3p5to3p6.task3.Car;
 import org.exercises.chapter3p5to3p6.task4.Rectangle1;
 import org.exercises.chapter3p5to3p6.task5.Singleton;
+import org.exercises.finalproject.*;
+import org.exercises.finalproject.enums.*;
+import org.exercises.finalproject.enums.Package;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) {
@@ -62,6 +67,10 @@ public class Main {
 
         System.out.println(">> Класс Object, Конструкторы. Задача 5");
         testSingleton();
+        System.out.println("\n******************************************\n");
+
+        System.out.println(">> Итоговый проект");
+        testFinalProject();
         System.out.println("\n******************************************\n");
     }
 
@@ -275,6 +284,73 @@ public class Main {
         Singleton s2 = Singleton.getInstance();
         if (s1 == s2) {
             System.out.println("Обе ссылки указывают на один объект в куче");
+        }
+    }
+
+    public static void testFinalProject() {
+
+        User user = new User(
+                "Kristina",
+                "Nikulina",
+                "k.v.nikulina.vrn@gmail.com",
+                "8 800 999 65 54",
+                "18kristi",
+                "0000",
+                Role.CUSTOMER
+        );
+
+        Address address = new Address(
+                Country.RUSSIA,
+                "Voronezh",
+                "Voronezh-region",
+                "Pushkina",
+                "15",
+                "999777"
+        );
+
+        CartItem[] cartItemArray = null;
+        try {
+            cartItemArray = new CartItem[]{
+                    new CartItem(
+                            new Coffee(
+                                    "Coffee",
+                                    BigDecimal.valueOf(890),
+                                    0.4F,
+                                    Manufacturer.BRAZILIAN_COFFEE,
+                                    Country.BRASILIA,
+                                    Package.PAPER,
+                                    CoffeeType.GROUND,
+                                    Roasting.MEDIUM
+                            ),
+                            (short) -1
+                    ),
+                    new CartItem(
+                            new Tea(
+                                    "TheBestTea",
+                                    BigDecimal.valueOf(1030),
+                                    0.9F,
+                                    Manufacturer.LIPTON,
+                                    Country.INDIA,
+                                    Package.STILL,
+                                    TeaType.BLACK,
+                                    Aroma.FRUIT
+                            ),
+                            (short) -1
+                    )
+            };
+
+            Order order1 = new Order(
+                    LocalDateTime.now(),
+                    user,
+                    address,
+                    Status.NEW,
+                    cartItemArray
+            );
+
+            System.out.println("Сформирован заказ:\n" + order1);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка выполнения программы\n" + e.getMessage());
         }
     }
 }

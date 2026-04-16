@@ -4,6 +4,13 @@ public class Person1 {
     private String fullName;
     private Integer age;
 
+    public Person1(String fullName, Integer age) {
+        if (fullName == null) fullName = "Максимова Кристина Владимировна";
+        if (age == null) age = 29;
+        this.fullName = fullName;
+        this.age = age;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -22,13 +29,6 @@ public class Person1 {
 
     public Person1() {
         this("Дефолтнов Дефолт Дефолтович", 18);
-    }
-
-    public Person1(String fullName, Integer age) {
-        if(fullName == null) fullName = "Максимова Кристина Владимировна";
-        if (age == null) age = 29;
-        this.fullName = fullName;
-        this.age = age;
     }
 
     public void move() {

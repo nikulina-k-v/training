@@ -2,6 +2,8 @@ package org.exercises.finalproject;
 
 import org.exercises.finalproject.enums.Country;
 
+import java.util.Objects;
+
 public class Address {
     private Country country;
     private String city;
@@ -10,6 +12,15 @@ public class Address {
     private String house;
     private String apartment;
     private String index;
+
+    public Address(Country country, String city, String region, String street, String house, String index) {
+        this.country = country;
+        this.city = city;
+        this.region = region;
+        this.street = street;
+        this.house = house;
+        this.index = index;
+    }
 
     public Country getCountry() {
         return country;
@@ -65,5 +76,37 @@ public class Address {
 
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country=" + country +
+                ", city='" + city + '\'' +
+                ", region='" + region + '\'' +
+                ", street='" + street + '\'' +
+                ", house='" + house + '\'' +
+                ", apartment='" + apartment + '\'' +
+                ", index='" + index + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return country == address.country
+                && Objects.equals(city, address.city)
+                && Objects.equals(region, address.region)
+                && Objects.equals(street, address.street)
+                && Objects.equals(house, address.house)
+                && Objects.equals(apartment, address.apartment)
+                && Objects.equals(index, address.index);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(country, city, region, street, house, apartment, index);
     }
 }

@@ -2,6 +2,8 @@ package org.exercises.finalproject;
 
 import org.exercises.finalproject.enums.Role;
 
+import java.util.Objects;
+
 public class User {
     private String name;
     private String lastName;
@@ -10,6 +12,16 @@ public class User {
     private String login;
     private String password;
     private Role role;
+
+    public User(String name, String lastName, String mail, String phoneNumber, String login, String password, Role role) {
+        this.name = name;
+        this.lastName = lastName;
+        this.mail = mail;
+        this.phoneNumber = phoneNumber;
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
 
     public String getName() {
         return name;
@@ -65,5 +77,37 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", mail='" + mail + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(name, user.name)
+                && Objects.equals(lastName, user.lastName)
+                && Objects.equals(mail, user.mail)
+                && Objects.equals(phoneNumber, user.phoneNumber)
+                && Objects.equals(login, user.login)
+                && Objects.equals(password, user.password)
+                && role == user.role;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, lastName, mail, phoneNumber, login, password, role);
     }
 }

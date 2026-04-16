@@ -1,6 +1,6 @@
 package org.exercises.chapter3p3to3p4.task6;
 
-public class Driver extends Person{
+public class Driver extends Person {
     private int experience;
 
     public int getExperience() {

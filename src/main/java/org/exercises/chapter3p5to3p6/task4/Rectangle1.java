@@ -34,6 +34,7 @@ public class Rectangle1 {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Rectangle1 rectangle = (Rectangle1) o;
         return Objects.equals(width, rectangle.width) &&

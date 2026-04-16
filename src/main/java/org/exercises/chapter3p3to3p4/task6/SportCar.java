@@ -1,6 +1,6 @@
 package org.exercises.chapter3p3to3p4.task6;
 
-public class SportCar extends Car{
+public class SportCar extends Car {
     private double speed;
 
     public double getSpeed() {

@@ -41,11 +41,11 @@ public class Phone {
     }
 
     public void receiveCall(Phone ph) {
-        if(ph.getNumber() == null || this.getNumber() == null) {
+        if (ph.getNumber() == null || this.getNumber() == null) {
             System.out.println("Ошибка! Один из номеров null!");
             return;
         }
-        if(ph.getNumber().equals(this.getNumber())) {
+        if (ph.getNumber().equals(this.getNumber())) {
             System.out.println("Ошибка! Звонок самому себе!");
         } else {
             System.out.println("Звонит " + getNumber());
